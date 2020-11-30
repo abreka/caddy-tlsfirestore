@@ -5,7 +5,7 @@ RUN echo 'package main\n\
 import (\n\
 caddycmd "github.com/caddyserver/caddy/v2/cmd"\n\
 _ "github.com/caddyserver/caddy/v2/modules/standard"\n\
-_ "github.com/pteich/caddy-tlsconsul"\n\
+_ "github.com/abreka/caddy-tlsfirestore"\n\
 )\n\
 func main() {\n\
 caddycmd.Main()\n\
@@ -17,5 +17,5 @@ caddycmd.Main()\n\
 
 FROM caddy:2
 LABEL maintainer="jbn@abreka.com"
-LABEL description="Caddy 2 with integrated TLS Secrets Manager plugin"
+LABEL description="Caddy 2 with integrated caddy-tlsfirestore plugin"
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
